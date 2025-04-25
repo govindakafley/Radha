@@ -11,7 +11,8 @@ class PermissionSerializer(serializers.ModelSerializer):
     permission_handler = PermissionHandler()
 
     def validate(self, attrs: dict)-> dict:
-        if self.instance is None and self.permission_handler.get_permission_by_name(name=attrs['name']).exists():
+        print('attrs', attrs)
+        if self.instance is None and self.permission_handler.get_permission_by_name(name=attrs['name']) is not None:
             raise serializers.ValidationError("Permission with this name already exists")
         return attrs
     
@@ -36,3 +37,7 @@ class PermissionSerializer(serializers.ModelSerializer):
     def get_permission_by_id(self, permission_id: int) -> dict:
         permission = self.permission_handler.get_permission_by_id(permission_id) 
         return permission
+    
+    def get_all_permissions(self) -> list:
+        permissions = self.permission_handler.get_all_permissions() 
+        return permissions

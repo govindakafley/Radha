@@ -37,8 +37,10 @@ class PermissionRepository:
             return False
     @staticmethod
     def get_permission_by_name(name: str) -> dict:
+        print('name', name)
         try:
-            permission: Permission = Permission.objects.get(name=name)
+            permission = Permission.objects.filter(name=name).first()
+            print('dddddds',permission)
             return permission
         except Permission.DoesNotExist:
             return None

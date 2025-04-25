@@ -18,6 +18,7 @@ class PermissionHandler:
         return self.permission_service.delete_permission(permission_id)
     
     def get_permission_by_name(self, name: str) -> dict:
+        print('name', name)
         return self.permission_service.get_permission_by_name(name)
     
     def get_all_permissions(self) -> list:
