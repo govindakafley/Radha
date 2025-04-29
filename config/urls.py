@@ -20,4 +20,5 @@ urlpatterns = [
     path('api/v1/', include('modules.authentication.urls')),
     path('api/v1/', include('modules.master.urls')),
     path('api/v1/', include('modules.employee.urls')),
+    path('api/v1/', include('modules.procument.urls')),
 ]

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'modules.authentication',
     'modules.master',
-    'modules.employee'
+    'modules.procument'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +85,11 @@ REST_FRAMEWORK = {
     ],
      'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        
     ],
+    #  'DEFAULT_AUTHENTICATION_CLASSES': [
+    #    'middlewares.authentication.CookiesJWTAuthentication',
+    #  ],
 }
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # Access token lifetime
