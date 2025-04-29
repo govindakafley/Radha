@@ -1,7 +1,7 @@
 from modules.master.repository.accountgroup import AccountGroupRepository
 
 class AccountGroupHandler:
-    def __init__(self, account_group=None):
+    def __init__(self):
         self.account_group = AccountGroupRepository()
 
     def create_account_group(self, account_group_data: dict) -> dict:
